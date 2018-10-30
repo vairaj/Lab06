@@ -5,3 +5,5 @@ https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.3.0/com.ibm.zos.v2r3.cbc
 <br>
 http://www.cplusplus.com/reference/vector/vector/size/
 <br>
+https://syntaxdb.com/ref/cpp/vectors
+<br>
