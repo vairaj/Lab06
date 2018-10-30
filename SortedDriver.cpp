@@ -61,6 +61,14 @@ getWords(size_t numWords, size_t wordLength, string alphabet)
 double
 mostIsolated(vector<double> & number)
 {
+	
+	vector<double> nLeft(number.size()); //store distance to nearest left for each #
+	vector<double> nRight(number.size()); //store distance to nearest right for each #
+	
+	cout << "size: " << number.size() << endl;
+	nLeft[0] = 0;
+
+	
 	// STUB  STUB  STUB
 	return -123.456;
 }
