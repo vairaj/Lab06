@@ -10,5 +10,4 @@ https://syntaxdb.com/ref/cpp/vectors
 http://www.cplusplus.com/reference/string/string/size/
 <br>
 http://alumni.cs.ucr.edu/~pdiloren/C++_Pointers/
-#hey teacher do you read these?
 <br>
