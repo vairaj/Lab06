@@ -13,3 +13,5 @@ http://alumni.cs.ucr.edu/~pdiloren/C++_Pointers/
 <br>
 https://www.cs.fsu.edu/~myers/c++/notes/references.html
 <br>
+https://thispointer.com/c-how-to-get-element-by-index-in-list/
+<br>
