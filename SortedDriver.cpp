@@ -80,8 +80,38 @@ mostIsolated(vector<double> & number)
 int
 unmatched(list<string> & A, list<string> & B)
 {
-	// STUB  STUB  STUB
-	return -1;
+	//using iterators as seen here: https://thispointer.com/c-how-to-get-element-by-index-in-list/
+	list<string>::iterator aFence = A.begin();
+	list<string>::iterator bFence = B.begin();
+	//track number of elements in A not in B
+	int temp = A.size();
+
+	//remove non-unique elements
+	//A.unique();
+	//B.unique();
+
+	for (list<string>::iterator i = A.begin(), j = B.begin(); i != A.end() && j != B.end(); )
+	{
+
+		if (*i == *j)
+		{
+			temp = temp - 1;
+			++i;
+		}
+		else if (*i > *j)
+		{
+			++j;
+		}
+		else if (*i < *j)
+		{
+			++i;
+		}
+		//advance(aFence, i);
+		//advance(bFence, j);
+		//A.pop_front();
+		//B.pop_front;
+	}
+	return  temp;
 }
 
 
