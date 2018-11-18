@@ -1,5 +1,10 @@
 // SortedDriver.cpp
 
+
+//MODIFIED BY 
+//Jasmine Vaira
+//COSC 2030, FALL 2018
+
 // tom bailey   1445  25 mar 2014
 // Construct sorted sequences and call functions that
 //   process the sorted sequences.
@@ -61,24 +66,43 @@ getWords(size_t numWords, size_t wordLength, string alphabet)
 double
 mostIsolated(vector<double> & number)
 {
-	
-	vector<double> nLeft(number.size()); //store distance to nearest left for each #
-	vector<double> nRight(number.size()); //store distance to nearest right for each #
+	//variable to store the most isolated number :D
+	//the most isolated number is the number whose nearest neighbor is farthest away
+	double mostIsolated = 0;
+
+	//store nearest number to each entry
+	vector<double> nearestNumber(number.size());
+
+	//vector<double> nLeft(number.size()); //store distance to nearest left for each #
+	//vector<double> nRight(number.size()); //store distance to nearest right for each #
 	
 	cout << "size: " << number.size() << endl;
-	nLeft[0] = 0;
 
+	//set the first leftmost and last rightmost to 0, since they are the beginning and ending so have no leftmost/rightmost
+	//nLeft[0] = 0;
+	//nRight[number.size()] = 0;
+
+	//most isolated number defaults to the first entry
+	double mostIs = number.front();
+	double lastNum = 0;
+
+	for (vector<double>::iterator it = number.begin(); it != number.end(); it++)
+	{
+		if ((abs(*it - lastNum)) > mostIs)
+		{
+			mostIs = *it;
+		}
+		lastNum = *it;
+	}
 	
-	// STUB  STUB  STUB
-	return -123.456;
+	return mostIs;
 }
 
 
 // pre:  A and B are sorted.
 // post: The number of strings in A that do not occur in B
 //         has been returned.
-int
-unmatched(list<string> & A, list<string> & B)
+int unmatched(list<string> & A, list<string> & B)
 {
 	//using iterators as seen here: https://thispointer.com/c-how-to-get-element-by-index-in-list/
 	list<string>::iterator aFence = A.begin();
@@ -92,7 +116,7 @@ unmatched(list<string> & A, list<string> & B)
 
 	for (list<string>::iterator i = A.begin(), j = B.begin(); i != A.end() && j != B.end(); )
 	{
-
+		//TA helped with this part! I wanted to figure it out by incrementing through the lists with an iterator, he helped me make it actually work.
 		if (*i == *j)
 		{
 			temp = temp - 1;
@@ -106,10 +130,6 @@ unmatched(list<string> & A, list<string> & B)
 		{
 			++i;
 		}
-		//advance(aFence, i);
-		//advance(bFence, j);
-		//A.pop_front();
-		//B.pop_front;
 	}
 	return  temp;
 }
