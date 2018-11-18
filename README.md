@@ -16,7 +16,7 @@ https://www.cs.fsu.edu/~myers/c++/notes/references.html
 <br>
 https://thispointer.com/c-how-to-get-element-by-index-in-list/
 <br>
-the TA guy
+the TA guy who does the labs
 <br>
 https://www.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterators.html
 <br>
