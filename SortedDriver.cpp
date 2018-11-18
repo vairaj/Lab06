@@ -128,10 +128,6 @@ int unmatched(list<string> & A, list<string> & B)
 	//track number of elements in A not in B
 	int temp = A.size();
 
-	//remove non-unique elements
-	//A.unique();
-	//B.unique();
-
 	for (list<string>::iterator i = A.begin(), j = B.begin(); i != A.end() && j != B.end(); )
 	{
 		//TA helped with this part! I wanted to figure it out by incrementing through the lists with an iterator, he helped me make it actually work.
