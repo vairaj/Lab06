@@ -70,14 +70,20 @@ mostIsolated(vector<double> & number)
 
 	//most isolated number defaults to the first entry
 	double mostIs = number.front();
+	//the previous number in the vector
 	double lastNum = 0;
+	//nN = distance to nearest neighbor
+	double nN = 0;
 
 	for (vector<double>::iterator it = number.begin(); it != number.end(); it++)
 	{
-		if ((abs(*it - lastNum)) > mostIs)
+		if (nN < (abs(*it - lastNum)))
 		{
 			mostIs = *it;
 		}
+		//update nN
+		nN = abs(*it - lastNum);
+		//update lastNum
 		lastNum = *it;
 	}
 	return mostIs;
