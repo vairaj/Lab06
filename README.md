@@ -17,3 +17,5 @@ https://thispointer.com/c-how-to-get-element-by-index-in-list/
 <br>
 the TA guy
 <br>
+https://www.cs.northwestern.edu/~riesbeck/programming/c++/stl-iterators.html
+<br>
