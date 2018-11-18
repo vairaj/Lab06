@@ -75,23 +75,28 @@ mostIsolated(vector<double> & number)
 	double lastNum = 0;
 	//nN = distance to nearest neighbor
 	double nN = 0;
-
+	//nL stores distance to left neighbor
+	double nL = 0;
+	//nR store distance to right neighbor
+	double nR = 0;
+	//lastNN stores the nearest neighbor of the previous number
+	double lastNN = 0;
+	//iterate through the vector and determine the most isolated number :0
 	for (vector<double>::iterator it = number.begin(); it != number.end(); it++)
 	{
-		//variables for storing nearest left and nearest right to determine nearest neighbor
-		double nL, nR = 0;
+		//pointer to the next item in the vector. 
+		//note: at the end of the vector, this points to an out of bounds place and could cause problems in a real program.
 		auto nextNum = next(it, 1);
-
-		if (nN < (abs(*it - lastNum)))
-		{
-			mostIs = *it;
-		}
+		//set lastNN equal to nN
+		lastNN = nN;
+		//update nL and nR
 		nL = abs(*it - lastNum);
 		if (nextNum != number.end())
 		{
 			nR = abs(*nextNum - *it);
 		}
 		//update nN
+		//note: nN is distance to the nearest neighbor
 		if (nL > nR)
 		{
 			nN = nR;
@@ -99,6 +104,11 @@ mostIsolated(vector<double> & number)
 		else
 		{
 			nN = nL;
+		}
+		//update mostIs if the current number's nearest neighbor is farther than the last number's nn
+		if (nN > lastNN)
+		{
+			mostIs = *it;
 		}
 		//update lastNum
 		lastNum = *it;
