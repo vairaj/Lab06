@@ -65,22 +65,8 @@ getWords(size_t numWords, size_t wordLength, string alphabet)
 // post: The most isolated entry in number has been returned
 double
 mostIsolated(vector<double> & number)
-{
-	//variable to store the most isolated number :D
-	//the most isolated number is the number whose nearest neighbor is farthest away
-	double mostIsolated = 0;
-
-	//store nearest number to each entry
-	vector<double> nearestNumber(number.size());
-
-	//vector<double> nLeft(number.size()); //store distance to nearest left for each #
-	//vector<double> nRight(number.size()); //store distance to nearest right for each #
-	
+{	
 	cout << "size: " << number.size() << endl;
-
-	//set the first leftmost and last rightmost to 0, since they are the beginning and ending so have no leftmost/rightmost
-	//nLeft[0] = 0;
-	//nRight[number.size()] = 0;
 
 	//most isolated number defaults to the first entry
 	double mostIs = number.front();
@@ -94,7 +80,6 @@ mostIsolated(vector<double> & number)
 		}
 		lastNum = *it;
 	}
-	
 	return mostIs;
 }
 
