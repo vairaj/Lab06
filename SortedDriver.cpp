@@ -17,6 +17,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <iterator> //so can use 'next' 
 
 using namespace std;
 
@@ -77,12 +78,28 @@ mostIsolated(vector<double> & number)
 
 	for (vector<double>::iterator it = number.begin(); it != number.end(); it++)
 	{
+		//variables for storing nearest left and nearest right to determine nearest neighbor
+		double nL, nR = 0;
+		auto nextNum = next(it, 1);
+
 		if (nN < (abs(*it - lastNum)))
 		{
 			mostIs = *it;
 		}
+		nL = abs(*it - lastNum);
+		if (nextNum != number.end())
+		{
+			nR = abs(*nextNum - *it);
+		}
 		//update nN
-		nN = abs(*it - lastNum);
+		if (nL > nR)
+		{
+			nN = nR;
+		}
+		else
+		{
+			nN = nL;
+		}
 		//update lastNum
 		lastNum = *it;
 	}
